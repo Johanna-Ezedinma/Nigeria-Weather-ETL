@@ -61,20 +61,19 @@ def transform_weather_data(weather_records):
 
     return df
 
-
 def get_time_period(hour):
     """
     Categorize collection time into a period of the day.
     """
 
-    if 5 <= hour < 9:
+    if 0 <= hour < 6:
+        return "Midnight"
+
+    elif 6 <= hour < 12:
         return "Morning"
 
-    elif 9 <= hour < 15:
+    elif 12 <= hour < 18:
         return "Midday"
 
-    elif 15 <= hour < 21:
-        return "Evening"
-
     else:
-        return "Midnight"
+        return "Evening"
